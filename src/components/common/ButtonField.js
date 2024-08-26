@@ -6,7 +6,10 @@ export default function ButtonField(props) {
         style={{
             borderRadius: 35,
             backgroundColor: props.bg,
-            padding: "10px 50px"
+            padding: "10px 50px",
+            textTransform: "capitalize"
         }}
-        variant="contained">{props.label}</Button>
+        variant="contained"
+        onClick={props.clicked}
+        >{props.label}</Button>
 }
