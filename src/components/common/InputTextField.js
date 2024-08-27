@@ -29,9 +29,10 @@ export default function InputTextField(props) {
                 color: props.color,
                 borderColor: props.border,
                 borderWidth: props.borderWidth,
-                borderRadius: '10px'
+                borderRadius: '30px'
             },
             "&.Mui-focused": {
+                borderColor: props.border,
                 "& .MuiOutlinedInput-notchedOutline": {
                     borderColor: props.border,
                 },
@@ -52,9 +53,9 @@ export default function InputTextField(props) {
         onClick={handleClickShowPassword}
         onMouseDown={handleMouseDownPassword}
         edge="end"
-        style={{color: "#fff", position: "absolute", right:"10px", top: "5px"}}
+        style={{color: "#fff", position: "absolute", right:"20px", top: "10px"}}
       >
-        {showPassword ? <VisibilityOff /> : <Visibility />}
+        {showPassword ? <VisibilityOff fontSize="small"/> : <Visibility fontSize="small" />}
       </IconButton>
     }
     </div>
