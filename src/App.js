@@ -1,11 +1,25 @@
 import './App.css';
-import Login from './pages/login';
+import { Route, Routes } from 'react-router-dom';
+import { routes } from "./config/routes";
+import { AuthRoute } from './config/AuthRoute';
 function App() {
   return (
-    <div>
-      <Login />
-    </div>
+    <Routes>
+      {
+        routes.map(({ path, Page, auth }) => {
+          if (auth) {
+            return <Route key={path} path={path} element={
+              <AuthRoute>
+                <Page />
+              </AuthRoute>
+            } />
+          }
+          return <Route path={path} element={<Page />} />
+        })
+      }
+    </Routes>
   );
 }
 
 export default App;
+
