@@ -1,7 +1,8 @@
+import InDevelopment from "./underConstructor";
 function Subscription() {
     return (
       <div>
-        Subscripttion
+        <InDevelopment />
       </div>
     );
   }

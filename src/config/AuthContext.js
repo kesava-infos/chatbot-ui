@@ -4,9 +4,11 @@ const AuthContext = createContext();
 const AuthProvider = (props) => {
     const [isAuth, setAuth] = useState(false);
     const login = () => {
+        window.sessionStorage.setItem("isAuth", true);
         setAuth(true)
     }
     const logout = () => {
+        window.sessionStorage.setItem("isAuth", false);
         setAuth(false)
     }
     return <AuthContext.Provider value={{ isAuth, login, logout }}>
@@ -18,7 +20,6 @@ const AuthProvider = (props) => {
 
 const useAuth = () => {
     const context = useContext(AuthContext);
-    console.log(context)
     return context;
 }
 

@@ -29,12 +29,13 @@ export default function Login() {
             <img src={bell} alt="icon " className="w-[50px] opacity-25 absolute top-[105px] sm:left-[-100px] md:left-[70px]" />
             <img src={graph} alt="icon " className="w-[50px] opacity-25 absolute top-[375px] right-[46%]" />
         </div>
-        <div className="sm:w-[30%] flex flex-col items-center gap-2 justify-start min-w-[320px] bg-white  h-[96%] rounded-3xl grow px-12 py-6 xl:max-w-[600px]">
-            <img src={logo} alt="logo" className="w-[150px]" />
+        <div className="sm:w-[30%] flex flex-col items-center gap-2 justify-start min-w-[320px] bg-white  h-[96%] rounded-3xl grow px-12 py-4 xl:max-w-[600px]">
+            <img src={logo} alt="logo" className="w-[130px]" />
+            <h1 className="text-4xl py-6 text-[#F86167] font-bold text-center">Welcome To AI Chatbot </h1>
             <div className=" bg-[#03234D] flex flex-col gap-4 rounded-3xl w-[100%] text-white">
                 <p className="  text-right pt-5 px-5 text-[#F86167] ">
-                    <span onClick={() => setCurretState("login")} style={currentState == "login" || currentState == "forgot" ? style1 : style2}>Login</span>  / 
-                    <span onClick={() => setCurretState("sigup")} style={currentState == "sigup" ? style1 : style2}> Sign up</span></p>
+                    <span className="text-lg" onClick={() => setCurretState("login")} style={currentState == "login" || currentState == "forgot" ? style1 : style2}>Login</span>  / 
+                    <span className="text-lg" onClick={() => setCurretState("sigup")} style={currentState == "sigup" ? style1 : style2}> Sign up</span></p>
                 <div className="p-5 w-[100%] items-center flex flex-col gap-5 ">
                     {
                         currentState == "login" && <LoginComponent setPageState={setCurretState} />
