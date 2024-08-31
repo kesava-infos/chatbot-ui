@@ -6,6 +6,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpIcon from '@mui/icons-material/Help';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+
 export const MenuList = [
     {
         label: "Dashboard",

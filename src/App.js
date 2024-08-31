@@ -3,9 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import { routes } from "./config/routes";
 import { AuthRoute } from './config/AuthRoute';
 import Layout from './layout';
+import { ToastContainer } from 'react-toast'
 
 function App() {
   return (
+    <>
     <Routes>
       <Route element={<Layout />}>
       {
@@ -22,6 +24,9 @@ function App() {
       }
       </Route>
     </Routes>
+  <ToastContainer position='bottom-right' delay="6000" />
+  </>
+
   );
 }
 

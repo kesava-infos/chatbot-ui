@@ -14,6 +14,11 @@ export default function InputTextField(props) {
     };
     return <div className="flex relative">
         <TextField
+            value={props.value}
+            onChange={(e)=>{
+                props.onchange(e?.target?.value||"")
+            }}
+            autoComplete="off"
             size="small"
             type={showPassword ? "text" : props.type}
             style={{ width: "100%" }}
@@ -53,7 +58,7 @@ export default function InputTextField(props) {
             }}
             label={props.label} variant="outlined" />
         {
-            props.type == "password" && <IconButton
+            props.type === "password" && <IconButton
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
                 edge="end"

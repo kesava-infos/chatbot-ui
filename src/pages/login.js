@@ -34,17 +34,17 @@ export default function Login() {
             <h1 className="text-4xl py-6 text-[#F86167] font-bold text-center">Welcome To AI Chatbot </h1>
             <div className=" bg-[#03234D] flex flex-col gap-4 rounded-3xl w-[100%] text-white">
                 <p className="  text-right pt-5 px-5 text-[#F86167] ">
-                    <span className="text-lg" onClick={() => setCurretState("login")} style={currentState == "login" || currentState == "forgot" ? style1 : style2}>Login</span>  / 
-                    <span className="text-lg" onClick={() => setCurretState("sigup")} style={currentState == "sigup" ? style1 : style2}> Sign up</span></p>
+                    <span className="text-lg" onClick={() => setCurretState("login")} style={currentState === "login" || currentState === "forgot" ? style1 : style2}>Login</span>  / 
+                    <span className="text-lg" onClick={() => setCurretState("sigup")} style={currentState === "sigup" ? style1 : style2}> Sign up</span></p>
                 <div className="p-5 w-[100%] items-center flex flex-col gap-5 ">
                     {
-                        currentState == "login" && <LoginComponent setPageState={setCurretState} />
+                        currentState === "login" && <LoginComponent setPageState={setCurretState} />
                     }
                     {
-                        currentState == "sigup" && <SigupComponent />
+                        currentState === "sigup" && <SigupComponent />
                     }
                      {
-                        currentState == "forgot" && <ForgotComponent setPageState={setCurretState} />
+                        currentState === "forgot" && <ForgotComponent setPageState={setCurretState} />
                     }
 
                 </div>

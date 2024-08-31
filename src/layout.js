@@ -9,8 +9,7 @@ function Layout() {
       {
         pathName !== "/" && <> <Menu update={setWidth}/> </>
       }
-      <div className={width === 64 ? "pl-[64px]": "pl-[240px]"}>
-
+      <div className={pathName !== "/" ? (width === 64 ? "pl-[64px]": "pl-[240px]") : ""}>
         <Outlet />
       </div>
     </>

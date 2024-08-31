@@ -1,4 +1,6 @@
 import React, { useContext, createContext, useState } from "react";
+import store from "./store";
+
 const AuthContext = createContext();
 
 const AuthProvider = (props) => {
