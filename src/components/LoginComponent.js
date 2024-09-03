@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 // import { Formik } from 'formik';
 import { useAuth } from "../config/AuthContext";
 import { loginService } from "../services";
-import { toast } from 'react-toast';
 
 export default function LoginComponent(props) {
     const [email, setEmail] = useState("");
@@ -15,9 +14,7 @@ export default function LoginComponent(props) {
     const handler = async () => {
         if (email && password) {
             const response = loginService(email, password, login, navigate);
-           
         }
-
     }
     return <>
         <InputTextField color="#F86167" border="#fff" label="Email Id" value={email} onchange={setEmail} />

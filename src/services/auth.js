@@ -14,10 +14,10 @@ async function loginService(email, password, loginCallback, navigate) {
     if (response && (response.status || response.statusText === "OK") && response?.data?.token) {
       loginCallback();
       toast.success("Login Success !");
-      setTimeout(()=>{
+      setTimeout(() => {
         navigate("/dashboard")
       }, 100)
-    } 
+    }
     return response;
   } catch (error) {
     toast.error(error?.response?.data?.error?.message || "Invalid Email / Password !");
@@ -25,4 +25,30 @@ async function loginService(email, password, loginCallback, navigate) {
   }
 }
 
-export { loginService }
+async function signupService(name, mobile, email, password, callback, navigate) {
+  try {
+    const response = await post('/auth/signup',
+      {
+        "name": name,
+        "email": email,
+        "mobile": mobile,
+        "password": password
+      },
+      {}
+    );
+    console.log(response);
+    if (response && response?.data?.token) {
+      callback();
+      toast.success("Signup Success !");
+      setTimeout(() => {
+        navigate("/dashboard")
+      }, 100)
+    }
+    return response;
+  } catch (error) {
+    toast.error(error?.response?.data?.error?.message || "Invalid Email / Password !");
+    return error;
+  }
+}
+
+export { loginService, signupService }
