@@ -53,7 +53,8 @@ export default function SigupComponent(props) {
     formik.handleSubmit = (event) => {
         event.preventDefault();
         const { email, password, name, mobile } = formik.values;
-        if (email && password && name && mobile && formik.isValid) {
+        const { errors } = formik;
+        if (email && password && name && mobile && !errors.email && !errors.password && !errors.name && !errors.mobile) {
             signupService(name, mobile, email, password, login, navigate);
         } else {
             toast.error("Please enter valid details !");

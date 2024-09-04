@@ -34,9 +34,12 @@ export default function LoginComponent(props) {
     const { login } = useAuth();
     let navigate = useNavigate();
     formik.handleSubmit = (event) => {
+        console.log(formik)
+        console.log(Object.keys(formik.errors))
         event.preventDefault();
         const { email, password } = formik.values;
-        if (email && password && formik.isValid) {
+        const { errors } = formik;
+        if (email && password && !errors.email && !errors.password) {
             loginService(email, password, login, navigate);
         } else {
             toast.error("Please enter valid details !");
