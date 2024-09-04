@@ -34,8 +34,6 @@ export default function LoginComponent(props) {
   const { login } = useAuth();
   let navigate = useNavigate();
   formik.handleSubmit = (event) => {
-    console.log(formik);
-    console.log(Object.keys(formik.errors));
     event.preventDefault();
     const { email, password } = formik.values;
     const { errors } = formik;
