@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 export default function InputTextField(props) {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -12,12 +13,12 @@ export default function InputTextField(props) {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-    return <div className="flex relative">
+    return <div><div className="flex relative">
         <TextField
-            value={props.value}
-            onChange={(e)=>{
-                props.onchange(e?.target?.value||"")
-            }}
+            name={props.name}
+            id={props.name}
+            value={props.formik?.values[props.name]}
+            onChange={props.formik?.handleChange}
             autoComplete="off"
             size="small"
             type={showPassword ? "text" : props.type}
@@ -56,7 +57,8 @@ export default function InputTextField(props) {
                     },
                 }
             }}
-            label={props.label} variant="outlined" />
+            label={props.label}
+            variant="outlined" />
         {
             props.type === "password" && <IconButton
                 onClick={handleClickShowPassword}
@@ -66,6 +68,10 @@ export default function InputTextField(props) {
             >
                 {showPassword ? <VisibilityOff fontSize="small" /> : <Visibility fontSize="small" />}
             </IconButton>
+        }
+    </div>
+        {
+            props.formik?.errors[props.name] && <div className="text-[#fff] text-left pl-[5%] text-[10px]"> <ErrorOutlineIcon sx={{ fontSize: "12px" }} />  {props.formik?.errors[props.name]}</div>
         }
     </div>
 } 
