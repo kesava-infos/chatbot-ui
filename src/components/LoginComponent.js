@@ -44,7 +44,11 @@ export default function LoginComponent(props) {
     }
   };
   return (
-    <>
+    <div onKeyDown={(e) => {  
+      if (e.key === "Enter") {
+        formik.handleSubmit(e);
+      }
+    }}>
       <InputTextField
         color="#F86167"
         border="#fff"
@@ -67,6 +71,6 @@ export default function LoginComponent(props) {
         Forgot Password ?
       </p>
       <ButtonField bg="#F86167" label="Login" clicked={formik.handleSubmit} />
-    </>
+    </div>
   );
 }
