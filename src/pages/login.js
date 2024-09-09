@@ -52,11 +52,11 @@ export default function Login() {
       </div>
       <div className="sm:w-[30%] flex flex-col items-center gap-2 justify-start min-w-[320px] bg-white  h-[96%] rounded-3xl grow px-12 py-4 xl:max-w-[600px]">
         <img src={logo} alt="logo" className="w-[130px]" />
-        <h1 className="text-4xl py-6 text-[#F86167] font-bold text-center">
-          Welcome To AI Chatbot{" "}
+        <h1 className="text-4xl py-6 text-primary font-bold text-center">
+          Welcome To AI Chatbot
         </h1>
-        <div className=" bg-[#03234D] flex flex-col gap-4 rounded-3xl w-[100%] text-white">
-          <p className="  text-right pt-5 px-5 text-[#F86167] ">
+        <div className=" bg-secondary flex flex-col gap-4 rounded-3xl w-[100%] text-white">
+          <p className="  text-right pt-5 px-5 text-primary ">
             <span
               className="text-lg"
               onClick={() => setCurretState("login")}

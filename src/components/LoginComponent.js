@@ -6,6 +6,7 @@ import { useAuth } from "../config/AuthContext";
 import { loginService } from "../services";
 import { toast } from "react-toast";
 import { useFormik } from "formik";
+import { colors } from "../typography";
 
 export default function LoginComponent(props) {
   const formik = useFormik({
@@ -44,20 +45,23 @@ export default function LoginComponent(props) {
     }
   };
   return (
-    <div onKeyDown={(e) => {  
-      if (e.key === "Enter") {
-        formik.handleSubmit(e);
-      }
-    }}>
+    <div
+      className="w-full h-full justify-center items-center flex flex-col gap-5 "
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          formik.handleSubmit(e);
+        }
+      }}
+    >
       <InputTextField
-        color="#F86167"
+        color={colors.primary}
         border="#fff"
         label="Email Id"
         name="email"
         formik={formik}
       />
       <InputTextField
-        color="#F86167"
+        color={colors.primary}
         border="#fff"
         label="Password"
         name="password"
@@ -70,7 +74,11 @@ export default function LoginComponent(props) {
       >
         Forgot Password ?
       </p>
-      <ButtonField bg="#F86167" label="Login" clicked={formik.handleSubmit} />
+      <ButtonField
+        bg={colors.primary}
+        label="Login"
+        clicked={formik.handleSubmit}
+      />
     </div>
   );
 }

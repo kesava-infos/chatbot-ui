@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../config/AuthContext";
 import { useFormik } from "formik";
 import { toast } from "react-toast";
+import { colors } from "../typography";
 
 export default function SigupComponent(props) {
   const formik = useFormik({
@@ -70,37 +71,48 @@ export default function SigupComponent(props) {
   };
   let navigate = useNavigate();
   return (
-    <>
+    <div
+      className="w-full h-full justify-center items-center flex flex-col gap-5 "
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          formik.handleSubmit(e);
+        }
+      }}
+    >
       <InputTextField
-        color="#F86167"
+        color={colors.primary}
         border="#fff"
         label=" Name"
         name="name"
         formik={formik}
       />
       <InputTextField
-        color="#F86167"
+        color={colors.primary}
         border="#fff"
         label="Mobile"
         name="mobile"
         formik={formik}
       />
       <InputTextField
-        color="#F86167"
+        color={colors.primary}
         border="#fff"
         label="Email Id"
         name="email"
         formik={formik}
       />
       <InputTextField
-        color="#F86167"
+        color={colors.primary}
         border="#fff"
         label="Password"
         name="password"
         type="password"
         formik={formik}
       />
-      <ButtonField bg="#F86167" label="Signup" clicked={formik.handleSubmit} />
-    </>
+      <ButtonField
+        bg={colors.primary}
+        label="Signup"
+        clicked={formik.handleSubmit}
+      />
+    </div>
   );
 }

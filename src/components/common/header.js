@@ -18,7 +18,7 @@ function Header(props) {
     }
   };
   return (
-    <div className="bg-lightRed px-4 py-6 text-white flex justify-between fixed w-[100%] z-[10000]">
+    <div className="bg-primary px-4 py-6 text-white flex justify-between fixed w-[100%] z-[10000]">
       <span className="pl-2">
         <MenuIcon style={{ color: "#ffffff" }} onClick={handlerDrawer} />
       </span>

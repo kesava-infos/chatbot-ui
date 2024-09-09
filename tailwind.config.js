@@ -1,13 +1,15 @@
-const { lightBlue } = require("@mui/material/colors");
+import { colors } from "./src/typography";
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {},
     colors: {
-      lightRed: "#F86167",
-      indigo: "#03234D",
+      primary: colors.primary,
+      secondary: colors.secondary,
+      tertiary: colors.tertiary,
+      white: colors.white,
+      black: colors.black,
     },
   },
   plugins: [],

@@ -78,7 +78,9 @@ export default function MiniDrawer(props) {
   const GetComponent = ({ Icon, path }) => {
     return (
       <Icon
-        className={location.pathname === path ? "text-lightRed" : "text-indigo"}
+        className={
+          location.pathname === path ? "text-primary" : "text-secondary"
+        }
       />
     );
   };
