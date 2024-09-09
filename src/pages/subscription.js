@@ -1,8 +1,10 @@
 import SubscriptionCard from "../components/SubscriptionCard";
 function Subscription() {
   return (
-    <div>
-      <SubscriptionCard data={cards[0]} />
+    <div className="mt-4 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  ">
+      {cards.map((card) => {
+        return <SubscriptionCard data={card} />;
+      })}
     </div>
   );
 }
